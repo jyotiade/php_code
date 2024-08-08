@@ -1,16 +1,3 @@
-<?php
-
-if(isset($_POST["submit"]))
-{
-  $empno=$_POST["eno"];
-  $name=$_POST["nm"];
-  $email=$_POST["email"];
-  $salary=$_POST["sal"];
-}
-
-?>
-
-<!-- ================================================================================== -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -32,30 +19,10 @@ if(isset($_POST["submit"]))
   </center>
   <hr size="3" color="black">
   <center><h1 style="color: white;">Insert Student Records</h1></center>
-
-  <?php
-// ==============================================================================
-if(isset($_POST["submit"]))
-{
-$con=new mysqli("localhost","root","","employeesdetail");
-
-$qry="insert into employee(empno,name,email,salary) values('$empno','$name','$email','$salary')";
-
-$con->query($qry);
-
-$con->close();
-
-
-echo "<script>";
-echo "alert('record save!!!!')";
-echo "</script>";
-}
-?>
-<!-- ==================================================================== -->
-
-<center>
-<div style="background-color: rgb(97, 160, 171);width:400px;height:450px;margin-top:80px">
-<form method="post" action="insert.php" >
+ 
+  <center>
+  <div style="background-color: rgb(97, 160, 171);width:400px;height:450px;margin-top:80px">
+<form method="post" action="save.php" >
 <br><br>
 Enter empno:<input type="text" name="eno" style="width:230px;height:30px;">
 <br><br><br><br>
@@ -65,13 +32,11 @@ Enter email:<input type="text" name="email" style="width:230px;height:30px;">
 <br><br><br><br>
 Enter salary:<input type="text" name="sal" style="width:230px;height:30px;">
 <br><br><br><br>
-<input type="submit" value="save" name="submit" style="width:100px;height:40px;"> 
+<input type="submit" value="save" style="width:100px;height:40px;"> 
 
 </form>
 </div>
 </center>
-
-
 
 </body>
 </html>

@@ -45,6 +45,7 @@ while($row=$result->fetch_assoc())
     echo "</tr>";
 }
 
+$con->close();
 
 ?>
  </table>
